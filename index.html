@@ -1,77 +1,258 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профессионал</title>
-    <link href="style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BeatConnect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:60px;
+background:#161616;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+font-weight:bold;
+z-index:100;
+}
+
+.feed{
+padding-top:60px;
+padding-bottom:80px;
+}
+
+.beat{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+}
+
+.cover{
+width:280px;
+height:280px;
+border-radius:25px;
+background:linear-gradient(
+135deg,
+#ff0066,
+#6600ff
+);
+box-shadow:0 0 40px rgba(255,0,102,.4);
+}
+
+.name{
+margin-top:20px;
+font-size:28px;
+font-weight:bold;
+}
+
+.info{
+margin-top:10px;
+color:#999;
+}
+
+.actions{
+margin-top:25px;
+display:flex;
+gap:10px;
+}
+
+button{
+background:#202020;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:12px;
+font-size:16px;
+}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:65px;
+background:#161616;
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.icon{
+font-size:24px;
+cursor:pointer;
+}
+
+.profile{
+display:none;
+padding:80px 20px;
+text-align:center;
+}
+
+.avatar{
+width:120px;
+height:120px;
+border-radius:50%;
+background:#333;
+margin:auto;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:20px;
+}
+
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- Главная секция -->
-        <header class="hero">
-            <h1 class="name">Данила</h1>
-            <div class="profession">
-                <span>ВЕБ-РАЗРАБОТЧИК.</span>
-                <span>ДИЗАЙНЕР.</span>
-                <span>UX/UI ДИЗАЙНЕР.</span>
-            </div>
-        </header>
 
-        <!-- Секция с описанием -->
-        <section class="about">
-            <h2>ЛИЧНАЯ ИНФОРМАЦИЯ</h2>
-            <div class="about-content">
-                <p>Я предлагаю самые креативные и оригинальные идеи для своих клиентов!</p>
-                
-                <p>Красивый сайт, который не работает, — это картинка. Функциональный сайт, который не привлекает, — это инструмент без души.</p>
-                
-                <p>Наша формула проста:
-Дизайнер = Визуал, который продаёт.
-Разработчик = Технологии, которые работают.
+<header>
+🎵 BeatConnect
+</header>
 
-Итог: ваш сайт становится вашим лучшим продавцом 24/7. Готовы к такому?</p>
-                
-                </p>
-            </div>
-        </section>
+<div id="feed" class="feed">
 
-        <!-- Секция с кнопками -->
-        <section class="portfolio">
-            <h2>МОИ РАБОТЫ</h2>
-            <div class="buttons-container">
-                <a href="https://t.me/portfoliodanila/6" target="_blank" class="portfolio-btn">
-                    📱 Телеграм
-                </a>
-                <a href="https://kwork.ru/user/danila_haritonov" target="_blank" class="portfolio-btn">
-                    💻 Kwork
-                </a>
-                <a href="https://behance.net/tempo36" target="_blank" class="portfolio-btn">
-                    🎨 Behance
-                </a>
-                <a href="https://www.donationalerts.com/r/tempo36" target="_blank" class="portfolio-btn">
-                    ❤️
-                </a>
-            </div>
-        </section>
+<div class="beat">
 
-        <!-- Контактная секция -->
-        <section class="contact">
-            <h2>СВЯЗАТЬСЯ СО МНОЙ</h2>
-            <div class="contact-buttons">
-                <a href="mailto:Tempo63@yandex.ru" class="contact-btn">
-                    ✉️ Написать на почту
-                </a>
-                <a href="https://t.me/@Tempo_63" target="_blank" class="contact-btn telegram">
-                    💬 Telegram
-                </a>
-            </div>
-        </section>
-    </div>
+<div class="cover"></div>
+
+<div class="name">
+Dark Dreams
+</div>
+
+<div class="info">
+140 BPM • Trap
+</div>
+
+<div class="actions">
+<button onclick="like()">❤️ <span id="likes">12</span></button>
+<button>🎤 Demo</button>
+<button>🤝 Collab</button>
+</div>
+
+</div>
+
+<div class="beat">
+
+<div class="cover"></div>
+
+<div class="name">
+Tokyo Night
+</div>
+
+<div class="info">
+150 BPM • Phonk
+</div>
+
+<div class="actions">
+<button>❤️ 45</button>
+<button>🎤 Demo</button>
+<button>🤝 Collab</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="profile" class="profile">
+
+<div class="avatar"></div>
+
+<h2 style="margin-top:15px;">
+Vecto
+</h2>
+
+<p style="color:#888;">
+Beatmaker
+</p>
+
+<div class="stats">
+<div>
+<h3>12</h3>
+<p>Битов</p>
+</div>
+
+<div>
+<h3>340</h3>
+<p>Подписчиков</p>
+</div>
+
+<div>
+<h3>95</h3>
+<p>Лайков</p>
+</div>
+</div>
+
+</div>
+
+<div class="bottom">
+
+<div class="icon" onclick="showFeed()">
+🏠
+</div>
+
+<div class="icon">
+➕
+</div>
+
+<div class="icon" onclick="showProfile()">
+👤
+</div>
+
+</div>
+
+<script>
+
+function like(){
+
+let el=document.getElementById("likes");
+
+el.innerText=
+parseInt(el.innerText)+1;
+
+}
+
+function showProfile(){
+
+document.getElementById("feed").style.display="none";
+
+document.getElementById("profile").style.display="block";
+
+}
+
+function showFeed(){
+
+document.getElementById("feed").style.display="block";
+
+document.getElementById("profile").style.display="none";
+
+}
+
+</script>
+
 </body>
-
 </html>
-
-
-
-
